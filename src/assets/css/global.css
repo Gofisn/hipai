@@ -1,3 +1,18 @@
+h1 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+input {
+  outline: none;
+  -webkit-appearance: none;
+}
+textarea {
+  outline: none;
+  -webkit-appearance: none;
+}
 .van-dialog {
   border-radius: 20px !important;
 }
@@ -16,11 +31,52 @@
 .van-overlay {
   background: rgba(0, 0, 0, 0.5) !important;
 }
-.van-pull-refresh {
+.van-toast {
+  border-radius: 20px !important;
+}
+.National .van-stepper__minus--disabled {
+  opacity: 0.8;
+}
+.van-tabs__wrap {
+  width: 100vw;
+  z-index: 999;
+}
+.van-tabs__wrap.van-hairline--top-bottom::after {
+  border: none;
+}
+.van-tabs__wrap .van-tab--active {
+  color: #FF0044;
+}
+.van-tabs__wrap .van-tab--active::after {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 6px;
+  background: #ff0044;
+  border-radius: 2px;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.van-tabs__wrap .van-tabs__line {
+  display: none !important;
+}
+.van-tabs__wrap .van-pull-refresh {
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
-.van-toast {
-  border-radius: 20px !important;
+.Questions .van-cell {
+  font-size: 30px;
+  font-weight: 600;
+  color: #212121;
+}
+.Questions .van-cell .van-cell__title {
+  padding-right: 12px;
+}
+.Questions .van-cell .van-cell__right-icon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
 }

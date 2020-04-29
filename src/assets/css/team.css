@@ -1,0 +1,496 @@
+.van-pull-refresh {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.about {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+.about h1 {
+  width: 750px;
+  background: #f00;
+  font-size: 32px;
+  line-height: 60px;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.finished {
+  text-align: center;
+  color: #999;
+  line-height: 60px;
+  font-size: 22px;
+}
+.Invite {
+  width: 100vw;
+  height: 100vh;
+  min-height: 700px;
+  background: #fff;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.Invite .head_box {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(39deg, #fffffd 0%, #ffdddd 100%);
+  color: #212121;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+.Invite .head_box .topbar {
+  width: 100vw;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  position: relative;
+}
+.Invite .head_box .topbar .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 84px;
+  height: 90px;
+}
+.Invite .head_box .topbar .left span {
+  display: inline-block;
+  width: 24px;
+  height: 40px;
+  margin-top: 24px;
+  background: url("../img/back_btn.png") no-repeat;
+  background-size: 24px 40px;
+}
+.Invite .head_box .topbar .right {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 300px;
+  height: 90px;
+  font-size: 32px;
+  text-align: right;
+}
+.Invite .head_box .topbar .title {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  font-weight: 600;
+}
+.Invite .head_box .team_title {
+  font-size: 32px;
+  color: #212121;
+  padding-left: 30px;
+  line-height: 50px;
+  padding-bottom: 10px;
+}
+.Invite .head_box .user_info {
+  display: flex;
+  align-items: center;
+}
+.Invite .head_box .user_info img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 30px;
+}
+.Invite .head_box .user_info .inviter_main {
+  font-size: 26px;
+  color: #666;
+  line-height: 40px;
+  flex: 1;
+  padding-right: 30px;
+}
+.Invite .head_box .user_info .inviter_main .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  color: #666;
+  line-height: 40px;
+}
+.Invite .head_box .user_info .inviter_main .item.black {
+  color: #212121;
+  font-size: 32px;
+  font-weight: bold;
+  padding: 6px 0;
+}
+.Invite .team_num_box {
+  width: 100vw;
+  height: 200px;
+  border-radius: 20px 20px 0px 0px;
+  background: #fff;
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #E5E5E5;
+}
+.Invite .team_num_box .item {
+  flex: 1;
+  text-align: center;
+}
+.Invite .team_num_box .item .name {
+  font-size: 24px;
+  color: #666;
+  line-height: 34px;
+}
+.Invite .team_num_box .item .number {
+  color: #212121;
+  font-size: 40px;
+  line-height: 50px;
+  padding: 10px 0;
+}
+.Invite .team_num_box .item .sub_num {
+  color: #999;
+  font-size: 24px;
+  line-height: 34px;
+}
+.Invite .main_box {
+  width: 100vw;
+  flex: 1;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+.Invite .main_box .item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.Invite .main_box .item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 30px;
+}
+.Invite .main_box .item .cnt {
+  flex: 1;
+  color: #666;
+  font-size: 24px;
+  line-height: 36px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.Invite .main_box .item .cnt .sp {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  padding-right: 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.Invite .main_box .item .cnt .sp .title {
+  font-size: 30px;
+  color: #222;
+  min-height: 50px;
+  line-height: 50px;
+}
+.Invite .main_box .item .cnt .sp .godetail {
+  font-size: 24px;
+  color: #999999;
+  position: relative;
+  padding-right: 20px;
+  line-height: 30px;
+}
+.Invite .main_box .item .cnt .sp .godetail::after {
+  position: absolute;
+  content: " ";
+  top: 6px;
+  right: 0;
+  width: 11px;
+  height: 19px;
+  background: url('../img/arrow_icon.png') no-repeat;
+  background-size: 100% 100%;
+}
+.Invite .main_box .van-pull-refresh__track {
+  height: 100%;
+}
+.Invite .main_box .van-pull-refresh__track .no_list {
+  color: #999;
+  padding-bottom: 30px;
+  font-size: 28px;
+  line-height: 50px;
+  text-align: center;
+  padding-top: 150px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.Invite .invit_btn {
+  height: 90px;
+  line-height: 90px;
+  background: linear-gradient(85deg, #f71750 0%, #f81750 100%);
+  font-size: 36px;
+  box-shadow: 0px 6px 16px 0px rgba(175, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 30px;
+  color: #fff;
+  text-align: center;
+}
+.Invite .choose_box {
+  background: #fff;
+}
+.Invite .choose_box .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Invite .choose_box .list .item {
+  flex: 1;
+  text-align: center;
+  padding: 30px;
+  color: #212121;
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+}
+.Invite .choose_box .list .item img {
+  width: 70px;
+  height: 70px;
+}
+.Invite .choose_box .list .item .show_award {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 170px;
+  height: 40px;
+  background: url('../img/invite_corner.png') no-repeat;
+  background-size: 100% 100%;
+}
+.Invite .choose_box .cancle {
+  line-height: 98px;
+  height: 98px;
+  text-align: center;
+  font-size: 30px;
+  color: #212121;
+  border-top: 2px solid rgba(0, 0, 0, 0.3);
+}
+.InviteAward {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(39deg, #fffffd 0%, #f5e8e8 100%);
+  overflow: auto;
+  padding-top: 90px;
+  box-sizing: border-box;
+}
+.InviteAward .topbar {
+  width: 100vw;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.InviteAward .topbar .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 84px;
+  height: 90px;
+}
+.InviteAward .topbar .left span {
+  display: inline-block;
+  width: 24px;
+  height: 40px;
+  margin-top: 24px;
+  background: url("../img/back_btn.png") no-repeat;
+  background-size: 24px 40px;
+}
+.InviteAward .topbar .title {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  font-weight: 600;
+}
+.InviteAward .award_main .award_last {
+  font-size: 24px;
+  color: #666;
+  padding: 30px;
+  text-align: center;
+}
+.InviteAward .award_main .award_koin {
+  font-size: 24px;
+  color: #999;
+  text-align: center;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.InviteAward .award_main .award_koin .num {
+  font-size: 58px;
+  color: #212121;
+  padding-left: 60px;
+  padding-right: 4px;
+}
+.InviteAward .award_main .award_rpc {
+  font-size: 28px;
+  color: #666;
+  text-align: center;
+  line-height: 40px;
+  padding-top: 6px;
+}
+.InviteAward .award_main .award_list {
+  padding: 30px;
+}
+.InviteAward .award_main .award_list .award_item {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 30px 0;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  background-image: url('../img/fire_icon.png');
+  background-repeat: no-repeat;
+  background-size: 167px 188px;
+  background-position: bottom right;
+}
+.InviteAward .award_main .award_list .award_item:last-child {
+  background-position: top right;
+}
+.InviteAward .award_main .award_list .award_item .li_num {
+  font-size: 36px;
+  color: #212121;
+}
+.InviteAward .award_main .award_list .award_item .li_main {
+  flex: 1;
+  padding-left: 30px;
+  line-height: 40px;
+}
+.InviteAward .award_main .award_list .award_item .li_main .t_name {
+  font-size: 28px;
+  color: #212121;
+}
+.InviteAward .award_main .award_list .award_item .li_main .t_name span {
+  color: #FF0044;
+}
+.InviteAward .award_main .award_list .award_item .li_main .sub_t {
+  font-size: 26px;
+  color: #666;
+}
+.InviteAward .award_main .award_list .award_item .li_main .red_t {
+  font-size: 22px;
+  color: #FF3E71;
+}
+.Share {
+  width: 100vw;
+  min-height: 100vh;
+  background: url("../img/share_bg.png") no-repeat;
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  color: #333;
+}
+.Share .cnt_box {
+  padding: 1px;
+  padding-top: 30px;
+}
+.Share .cnt_box .icon {
+  margin-left: 30px;
+  width: 266px;
+  height: 60px;
+}
+.Share .cnt_box .icon img {
+  width: 100%;
+}
+.Share .cnt_box .share_cnt {
+  padding-top: 130px;
+  padding-bottom: 80px;
+}
+.Share .cnt_box .share_cnt .t1 {
+  font-size: 60px;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+  font-weight: 500;
+}
+.Share .cnt_box .share_cnt .t2 {
+  font-size: 28px;
+  color: #fff;
+  line-height: 50px;
+  text-align: center;
+}
+.Share .main {
+  border-radius: 20px;
+  width: 660px;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 122px;
+  margin-bottom: 30px;
+  color: #212121;
+}
+.Share .main .head_box {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 15px solid #fff;
+  background: #fff;
+}
+.Share .main .head_box img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.Share .main .user_box {
+  text-align: center;
+  font-size: 28px;
+  line-height: 40px;
+}
+.Share .main .user_box .user_tt {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 50px;
+  padding-top: 5px;
+}
+.Share .main .ma_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+.Share .main .ma_box .yqm_box {
+  flex: 1;
+  overflow: auto;
+}
+.Share .main .ma_box .yqm_box .yqm_tit {
+  font-size: 32px;
+}
+.Share .main .ma_box .yqm_box .yqm {
+  font-size: 60px;
+  line-height: 100px;
+  color: #f71750;
+  font-weight: 500;
+}
+.Share .main .ma_box .ma {
+  width: 212px;
+  height: 212px;
+}
+.Share .main .ma_box .ma img {
+  width: 100%;
+}
+.Share .share_btn {
+  margin: 0px 30px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+  background: linear-gradient(90deg, #e21268 -10%, #f71750 25%, #ffa300 100%);
+  border-radius: 14px;
+}

@@ -18,6 +18,7 @@ router.beforeEach(async(to, from, next) => {
         params.OS = 1;
         store.dispatch("updateAppInfo", params);
     }
+    // console.log(to.path)
     Vue.prototype.$getSystemInfoFromApp('getH5Url', to.path, true)
 
     next();

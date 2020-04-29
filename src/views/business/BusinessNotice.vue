@@ -1,6 +1,6 @@
 <template>
   <div class="BusinessNotice" id="BusinessNotice">
-    <top-head title="系统通知" @leftClick="goBack"></top-head>
+    <top-head title="Notifikasi" @leftClick="goBack"></top-head>
     <van-pull-refresh v-model="loading" @refresh="refresh">
       <van-list
         v-model="loading"
@@ -15,7 +15,7 @@
       </van-list>
       <div v-show="!list.length&&finished" class="nolist">
         <img src="../../assets/img/no_notice.png" alt>
-        <div class="cont">暂无内容哦~</div>
+        <div class="cont">Sementara tidak ada tampilan</div>
       </div>
     </van-pull-refresh>
   </div>
@@ -54,7 +54,7 @@ export default {
      if (this.list.length < 7) {
         return "";
       } else {
-        return "没有更多了";
+        return "Tidak ada tampilan lagi";
       }
     }
   },
@@ -77,7 +77,7 @@ export default {
       let params = {
         page: this.page,
         page_size: this.page_size,
-        title: "交易通知,申诉通知"
+        title: "Notifikasi Transaksi"
       };
       this.loading = true;
       businessNotice(this.$resultParams(params))
@@ -119,5 +119,5 @@ export default {
 };
 </script>
 
-<style lang="less" scoped  src="../../assets/css/style.less">
+<style lang="less" scoped  src="../../assets/css/business.less">
 </style>

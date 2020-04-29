@@ -4,25 +4,26 @@ function resolve (dir) {
   return path.join(__dirname, dir)
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
-const cdn = {
-  css: [],
-  js: [ 
-    'https://static01.hipaiapp.net/static/vueall.min.js',
-    'https://static01.hipaiapp.net/static/jsrsasign-plus-min.js'
-  ]
-}
+// const isProduction = process.env.NODE_ENV === 'production';
+// const cdn = {
+//   css: [],
+//   js: [ 
+//     'https://static01.hipaiapp.net/static/vueall.min.js',
+//     'https://static01.hipaiapp.net/static/jsrsasign-plus-min.js'
+//   ]
+// }
 
 
 module.exports = {
   assetsDir: "static",
   //axios域代理，解决axios跨域问题
   // publicPath: '',// 需要区分生产环境和开发环境
+  lintOnSave:false, //去掉eslint代码检查
   devServer: {
     proxy: {
       '/': {
-        target: 'http://hipai.jiajiahebao.com/', //设置你调用的接口域名和端口号 别忘了加http
-        // target: process.env.NODE_ENV === 'development' ? 'http://192.168.81.101': 'http://hipai.jiajiahebao.com/',
+        target: 'http://idnhipai.jiajiahebao.com/', //设置你调用的接口域名和端口号 别忘了加http
+        // target: process.env.NODE_ENV === 'development' ? 'http://192.168.81.101:8993': 'http://hipai.jiajiahebao.com/',
         changeOrigin: true,
         ws: false,
         pathRewrite: {
@@ -42,31 +43,31 @@ module.exports = {
       .set('components', resolve('src/components'))
       .set('utils', resolve('src/utils'))
 
-    // 生产环境配置
-    if (isProduction) {
-      // 生产环境注入cdn
-      config.plugin('html')
-        .tap(args => {
-          args[0].cdn = cdn;
-          return args;
-        });
+    // // 生产环境配置
+    // if (isProduction) {
+    //   // 生产环境注入cdn
+    //   config.plugin('html')
+    //     .tap(args => {
+    //       args[0].cdn = cdn;
+    //       return args;
+    //     });
 
-      // 移除 prefetch 插件
-      config.plugins.delete('prefetch')
-      // 移除 preload 插件
-      config.plugins.delete('preload')
-    }
+    //   // 移除 prefetch 插件
+    //   config.plugins.delete('prefetch')
+    //   // 移除 preload 插件
+    //   config.plugins.delete('preload')
+    // }
   },
-  configureWebpack: config => {
-    if (isProduction) {
-      // 用cdn方式引入
-      config.externals = {
-        'vue': 'Vue',
-        'vuex': 'Vuex',
-        'vue-router': 'VueRouter',
-        'axios': 'axios',
-        'jsrsasign': 'jsrsasign'
-      }
-    }
-  },
+  // configureWebpack: config => {
+  //   if (isProduction) {
+  //     // 用cdn方式引入
+  //     config.externals = {
+  //       'vue': 'Vue',
+  //       'vuex': 'Vuex',
+  //       'vue-router': 'VueRouter',
+  //       'axios': 'axios',
+  //       'jsrsasign': 'jsrsasign'
+  //     }
+  //   }
+  // },
 }

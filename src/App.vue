@@ -70,9 +70,19 @@ export default {
         }
       });
     }
-    if (params.Authorization) {
-      this.$store.dispatch("updateAppInfo", params);
+    if (!params.Authorization && process.env.NODE_ENV === "development") {
+      let token = "EC7EB86A4B13639762403A326A30CD80";
+      // let token = "97E14997EF534BBDA080AB67D2E18341";
+      // let token = "881759DD79F4A9BE3F385A01CFEB6F7A";
+      params = {
+        Authorization: token,
+        OS: "1",
+        Source: "10000",
+        MobileModel: "Iphone8",
+        AppVersion: "1.0.0"
+      };
     }
+    this.$store.dispatch("updateAppInfo", params);
   },
   methods: {
     getCookie() {
@@ -93,7 +103,7 @@ html,
 body,
 #app {
   width: 100vw;
-  height: 100vh;
+  height: 100%; //不用100vh 解决部分浏览器头部占高问题
   margin: 0;
   padding: 0;
   font-family: "PingFang SC", "Microsoft YaHei", "SimSun";

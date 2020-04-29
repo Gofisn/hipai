@@ -70,20 +70,10 @@ export default {
               let bs = this.$store.state.business.buyBusiness;
               bs.sale_num = parseInt(bs.sale_num) - this.value;
               this.$store.dispatch("buyBusinessMsg", bs);
-              //待支付订单ID 存储在store中
-              this.$store.dispatch("changeBusinessPayId", res.data.id);
               // 设置返回路由跳转
               this.$store.dispatch("changeAppearBack", "GoBuy");
-              this.$router.replace("/buysubmit");
-            }else if(res.code === 10002){
-               Dialog.confirm({
-                  message: "&nbsp;<br/>购买嗨豆需完成实名认证。<br/>&nbsp;"
-                })
-                  .then(() => {
-                    this.$getSystemInfoFromApp('startVerifiedPage')
-                  })
-                  .catch(() => {});
-            } else {
+              this.$router.replace("/buysubmit?id="+res.data.id);
+            }else {
               Toast(res.msg);
             }
           })
@@ -113,6 +103,6 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped src="../../assets/css/style.less">
+<style lang="less" scoped src="../../assets/css/business.less">
 </style>
 

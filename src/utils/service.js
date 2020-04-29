@@ -1,7 +1,8 @@
 import axios from 'axios'
 import Vue from "vue";
 import {
-  Toast
+  Toast,
+  Dialog
 } from 'vant'
 import qs from 'qs'
 import store from '@/store'
@@ -21,12 +22,13 @@ var toastArr = [];
 service.interceptors.request.use(
   config => {
     // 不传递默认开启loading
-    if (!config.hideloading) {
+    // if (!config.hideloading) {
+    if ((config.params && config.params.hideloading == true) || (config.data && config.data.indexOf('hideloading=true') !== -1)) {} else {
       // loading
       let toast = Toast.loading({
         duration: 0, // 持续展示 toast
         forbidClick: true, // 禁用背景点击
-        message: '加载中...',
+        message: 'Memuat...',
       })
       toastArr.push(toast)
     }
@@ -35,15 +37,7 @@ service.interceptors.request.use(
     config.headers['Source'] = store.state.appInfo.Source
     config.headers['MobileModel'] = store.state.appInfo.MobileModel
     config.headers['AppVersion'] = store.state.appInfo.AppVersion
-
-    if (!store.state.appInfo.Authorization && process.env.NODE_ENV === 'development') {
-      // config.headers['Authorization'] = 'Bearer ' + '9E600497FC0474C8790C28E817258B43'
-      config.headers['Authorization'] = 'Bearer ' + '5327A5B8E0C0FE3C719E68730E4515F8'
-      config.headers['OS'] = '1'
-      config.headers['Source'] = '10000'
-      config.headers['MobileModel'] = 'Iphone8'
-      config.headers['AppVersion'] = '1.0.0'
-    }
+    config.headers['RequestedAt'] = parseInt(Date.now() / 1000)
     return config
   },
   error => {
@@ -56,7 +50,9 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     let toast = toastArr.pop()
-    toast.clear()
+    if (toast) {
+      toast.clear()
+    }
     const res = response.data
     if (res.code && res.code !== 200) {
       // 登录超时,重新登录
@@ -72,16 +68,18 @@ service.interceptors.response.use(
   },
   error => {
     let toast = toastArr.pop()
-    toast.clear()
+    if (toast) {
+      toast.clear()
+    }
     if (error.msg) {
       Toast(error.msg)
     } else {
       if (error.message.indexOf('timeout') > -1) {
-        Toast('接口超时')
+        Toast('Sistem error')
       } else if (error.message.indexOf('Network') > -1) {
-        Toast('网络异常')
+        Toast('Jaringan internet tidak normal')
       } else {
-        Toast("服务器异常")
+        Toast("Layanan sedang error")
       }
 
     }
@@ -92,7 +90,7 @@ service.interceptors.response.use(
 )
 
 //返回一个Promise(发送post请求)
-export function POST (url, params) {
+export function POST(url, params) {
   return new Promise((resolve, reject) => {
     service.post(url, qs.stringify(params))
       .then(response => {
@@ -108,11 +106,11 @@ export function POST (url, params) {
 }
 
 //返回一个Promise(发送get请求)
-export function GET (url, param) {
+export function GET(url, param) {
   return new Promise((resolve, reject) => {
     service.get(url, {
-      params: param
-    })
+        params: param
+      })
       .then(response => {
         resolve(response)
       }, err => {
@@ -124,20 +122,20 @@ export function GET (url, param) {
   })
 }
 
-export function POSTFORMAT (url, params) {
+export function POSTFORMAT(url, params) {
   return new Promise((resolve, reject) => {
     service({
-      url: url,
-      method: 'post',
-      data: params,
-      headers: {
-        "Content-Type": "multipart/form-data"
-      }
-    }).then(response => {
-      resolve(response);
-    }, err => {
-      reject(err);
-    })
+        url: url,
+        method: 'post',
+        data: params,
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(response => {
+        resolve(response);
+      }, err => {
+        reject(err);
+      })
       .catch((error) => {
         reject(error)
       })

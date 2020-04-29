@@ -1,12 +1,10 @@
 <template>
   <div class="rings_list">
-    <div class="item">
+    <div class="ring_item">
       <div class="item_title">
-        <img src="../assets/img/rings_tab.png"
-             class="item_icon" />
+        <img src="../assets/img/rings_tab.png" class="item_icon">
         <div class="item_title_text">{{notice.title}}</div>
-        <div class="item_title_no_reading"
-             v-if="notice.isNoRead"></div>
+        <div class="item_title_no_reading" v-if="notice.isNoRead"></div>
       </div>
       <div class="item_centent">
         <div class="item_centent_text">{{notice.content}}</div>
@@ -24,79 +22,81 @@ export default {
     // icon:String, 图标地址
     // title:String,
     // isNoRead:Boolean, 没有阅读true 阅读false
-    // content:String, 
+    // content:String,
     // date:String
   },
-  data () {
+  data() {
     return {};
   },
-  methods: {
-
-  },
-  mounted () { }
+  methods: {},
+  mounted() {}
 };
 </script>
 <style lang="less" scoped>
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  .item_title {
+.rings_list {
+  .ring_item {
     display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: flex-start;
-    .item_icon {
-      width: 62px;
-      height: 62px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    .item_title {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+      .item_icon {
+        width: 62px;
+        height: 62px;
+      }
+      .item_title_text {
+        flex: 1;
+        margin: 12px 0px 10px 14px;
+        min-height: 40px;
+        font-size: 28px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        line-height: 40px;
+        letter-spacing: 1px;
+      }
+      .item_title_no_reading {
+        display: inline-block;
+        margin: 10px;
+        width: 32px;
+        height: 32px;
+        background: rgba(247, 23, 80, 1);
+        border-radius: 50%;
+        transform: scale(0.5)
+      }
     }
-    .item_title_text {
-      flex: 1;
-      margin: 12px 0px 10px 14px;
-      height: 40px;
-      font-size: 28px;
-      font-family: PingFangSC-Regular;
-      font-weight: 400;
-      color: rgba(51, 51, 51, 1);
-      line-height: 40px;
-      letter-spacing: 1px;
-    }
-    .item_title_no_reading {
-      display: inline-block;
-      margin: 5px 20px;
-      width: 16px;
-      height: 16px;
-      background: rgba(247, 23, 80, 1);
-      border-radius: 50%;
-    }
-  }
-  .item_centent {
-    margin: 0px 0px 0px 76px;
-    width: 88%;
-    padding-bottom: 20px;
-    border-bottom: rgba(229, 229, 229, 1) solid 1px;
-    .item_centent_text {
-      font-size: 26px;
-      font-family: PingFangSC-Regular;
-      font-weight: 400;
-      color: rgba(145, 145, 145, 1);
-      line-height: 37px;
-      word-wrap: break-word;
-      word-break: break-all;
-    }
-    .item_date {
-      margin-top: 10px;
-      font-size: 22px;
-      font-family: PingFangSC-Regular;
-      font-weight: 400;
-      color: rgba(153, 153, 153, 1);
-      line-height: 30px;
-      letter-spacing: 1px;
+    .item_centent {
+      margin: 0px 0px 0px 76px;
+      width: 88%;
+      padding-bottom: 20px;
+      border-bottom: rgba(229, 229, 229, 1) solid 1px;
+      .item_centent_text {
+        font-size: 26px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(145, 145, 145, 1);
+        line-height: 37px;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+      .item_date {
+        margin-top: 10px;
+        font-size: 22px;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(153, 153, 153, 1);
+        line-height: 30px;
+        letter-spacing: 1px;
+      }
     }
   }
 }
+
 .no_notice {
   margin: 215px auto 0px;
   width: 100%;

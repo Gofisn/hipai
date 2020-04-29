@@ -1,6 +1,6 @@
 <template>
   <div class="BeansDetail" id="beans_detail">
-    <top-head title="嗨豆明细" @leftClick="goBack"></top-head>
+    <top-head title="Detail Hi-Koin" @leftClick="goBack"></top-head>
     <van-pull-refresh v-model="loading" @refresh="refresh">
       <van-list
         v-model="loading"
@@ -14,7 +14,7 @@
         <div class="item" v-for="item in list" :key="item.id">
           <img :src="gitImgIcon(item.log_tags)" alt>
           <div class="cnt">
-            <div>{{item.bean_num|numFormat}}个</div>
+            <div>{{item.bean_num}} buah</div>
             <div class="date">{{dateFormat(item.create_time)}}</div>
           </div>
           <div class="name">{{item.from_text}}</div>
@@ -22,7 +22,7 @@
       </van-list>
       <div class="beans_no" v-show="!list.length&&finished">
         <img src="../../assets/img/beans_no.png" alt>
-        <div>暂无内容哦～</div>
+        <div>Tidak ada tampilan</div>
       </div>
     </van-pull-refresh>
   </div>
@@ -57,7 +57,7 @@ export default {
       if (this.list.length < 12) {
         return "";
       } else {
-        return "没有更多了";
+        return "Tidak ada tampilan lagi";
       }
     }
   },
@@ -69,8 +69,10 @@ export default {
   },
   methods: {
     goBack() {
-      if (this.$store.state.business.beansFrom) {
-        this.$router.replace(this.$store.state.business.beansFrom);
+       let from=this.$store.state.routeFrom
+      if (from) {
+        this.$store.dispatch("changeRouteFrom", "");
+        this.$router.replace(from);
       } else {
         this.$getSystemInfoFromApp("closeWebPage");
       }
@@ -132,5 +134,5 @@ export default {
 };
 </script>
 
-<style lang="less" scoped  src="../../assets/css/style.less">
+<style lang="less" scoped  src="../../assets/css/business.less">
 </style>

@@ -62,3 +62,16 @@ function padLeftZero(str) {
     return ('00' + str).substr(str.length)
 }
 
+// 返回2020-03-26-62-30-0202
+export function getTodayStr() {
+    const now = new Date();
+    const year = now.getFullYear(); //得到年份
+    let month = now.getMonth() + 1;//得到月份
+    if (month < 10) {
+        month = "0" + month;
+    }
+    const date = now.getDate();//得到日期
+    let today = year + "-" + month + "-" + date
+    today = today + '-' + today.split("").reverse().join("")
+    return today
+}

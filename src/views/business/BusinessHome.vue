@@ -8,24 +8,39 @@
         <span class="right" @click="rightClick">
           <span :class="{num:hasNode}"></span>
         </span>
-        <div class="title">交易</div>
+        <div class="title">Transaksi</div>
       </div>
       <div class="cont_box">
-        <div class="btn_box">
-          <div @click="goList">交易记录</div>
-          <div v-show="!businessActive" @click="goBeans">嗨豆明细</div>
+        <div class="number_box">
+          <div class="bean_num">
+            <div class="tt">Hi-Koin</div>
+            <div class="count">{{userInfo.bean_amount|numFormatD }}</div>
+          </div>
+          <div class="bean_num">
+            <div class="tt">Rpc</div>
+            <div class="count">{{userInfo.gold_amount|numFormatD }}</div>
+          </div>
         </div>
-        <div>我的嗨豆(个)</div>
-        <div class="count">{{userInfo.bean_amount|numFormat}}</div>
+        <div class="btn_box">
+           <div @click="goLine" class="item">
+            <img src="../../assets/img/kline_icon.png" alt="">
+            <div>K <div>Grafik</div></div>
+          </div>
+          <div @click="goList" class="item">
+            <img src="../../assets/img/beanlist_icon.png" alt>
+            <div>Riwayat Transaksi</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="tab">
-      <router-link to="/wantbuy" class="item" tag="span">求购</router-link>
-      <router-link to="/sellout" class="item" tag="span">卖出</router-link>
+      <router-link to="/wantbuy" class="item item1" tag="span">Beli</router-link>
+      <router-link to="/sellout" class="item item2" tag="span">Jual </router-link>
     </div>
     <div class="main_box">
       <router-view></router-view>
     </div>
+
     <!-- <van-tabs v-model="businessActive" @click="changeBusinessActive" animated>
       <van-tab title="求购">
         <want-buy :first="businessActive"></want-buy>
@@ -59,7 +74,6 @@ export default {
   mounted() {
     this.businessActive = this.$store.state.business.homeActive;
   },
-  computed: {},
   created() {
     this.getInfo();
     this.getBSConfig();
@@ -100,7 +114,7 @@ export default {
     getCheckNotice() {
       let params = {
         type: 3,
-        type_params: "交易通知,申诉通知"
+        type_params: "Notifikasi Transaksi"
       };
       businessCheckNotice(this.$resultParams(params))
         .then(res => {
@@ -122,13 +136,18 @@ export default {
     changeBusinessActive(index, title) {
       this.$store.dispatch("changeBusinessActive", index);
     },
-    goBeans() {
-       this.$store.dispatch("changeBeansFrom", '/bs-home');
-      this.$router.push("/beansdetail");
-    },
     goList() {
       this.$store.dispatch("changeBusinessListActive", 0);
       this.$router.push("/bs-list");
+    },
+
+    goLine(){
+      Toast.loading({
+        duration: 0, // 持续展示 toast
+        forbidClick: true, // 禁用背景点击
+        message: "Memuat..."
+      });
+      this.$router.push("/kline");
     }
   },
   beforeRouteUpdate(to, from, next) {
@@ -142,6 +161,6 @@ export default {
   }
 };
 </script>
-<style lang="less"  src="../../assets/css/style.less">
+<style lang="less"  src="../../assets/css/business.less">
 </style>
 

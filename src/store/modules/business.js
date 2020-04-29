@@ -6,7 +6,6 @@ export const BUY_BUSINESS = 'BUY_BUSINESS';
 export const BUSINESS_PAYID = 'BUSINESS_PAYID';
 export const BUSINESS_PAYSUCCESS = 'BUSINESS_PAYSUCCESS';
 export const BUSINESS_CONFIT = 'BUSINESS_CONFIT';
-export const BEANS_FROM = 'BEANS_FROM';
 
 export default {
     state: {
@@ -18,7 +17,6 @@ export default {
         businessPayId: '', //待支付订单id
         businessPaySuccess: {}, //确认支付成功返回信息
         businessConfig: {}, //交易配置
-        beansFrom: "", //嗨豆明细是从哪里跳过来的
     },
     mutations: {
         [HOME_ACTIVE](state, num) {
@@ -45,9 +43,7 @@ export default {
         [BUSINESS_CONFIT](state, obj) {
             state.businessConfig = obj;
         },
-        [BEANS_FROM](state, obj) {
-            state.beansFrom = obj;
-        }
+
     },
     actions: {
         changeBusinessActive({
@@ -90,10 +86,6 @@ export default {
         }, obj) {
             commit(BUSINESS_CONFIT, obj)
         },
-        changeBeansFrom({
-            commit
-        }, obj) {
-            commit(BEANS_FROM, obj)
-        },
+
     }
 }

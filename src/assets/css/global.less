@@ -1,27 +1,119 @@
-.van-dialog{
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+textarea {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.van-dialog {
     border-radius: 20px !important;
-    .van-dialog__header{
+
+    .van-dialog__header {
         font-size: 36px !important;
     }
-    .van-dialog__content{
+
+    .van-dialog__content {
         font-size: 32px !important;
-        .van-dialog__message{
+
+        .van-dialog__message {
             font-size: 32px !important;
         }
     }
-    .van-button__text{
+
+    .van-button__text {
         font-size: 36px !important;
     }
 }
-.van-overlay{
-    background:rgba(0,0,0,0.5) !important;
+
+.van-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
 }
 
-.van-pull-refresh {
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
-.van-toast{
+.van-toast {
     border-radius: 20px !important;
+}
+
+.National {
+
+    .van-stepper__minus--disabled {
+        opacity: 0.8;
+    }
+}
+
+.van-tabs__wrap {
+    width: 100vw;
+    z-index: 999;
+
+    &.van-hairline--top-bottom {
+
+        &::after {
+            border: none;
+        }
+    }
+
+    .van-tab--active {
+        color: #FF0044;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 40px;
+            height: 6px;
+            background: rgba(255, 0, 68, 1);
+            border-radius: 2px;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+    }
+
+
+
+    .van-tabs__line {
+        display: none !important;
+    }
+
+    .van-pull-refresh {
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+    }
+
+}
+
+.Questions {
+    .van-cell {
+        font-size: 30px;
+        font-weight: 600;
+        color: #212121;
+        .van-cell__title{
+            padding-right: 12px;
+        }
+        .van-cell__right-icon {
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translateY(-50%)
+        }
+    }
+}
+
+.BusinessList {
+    // .van-tab {
+    //     flex: none;
+    //     min-width: 180px;
+    // }
 }

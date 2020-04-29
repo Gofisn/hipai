@@ -1,0 +1,543 @@
+.van-pull-refresh {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.Earnings {
+    width: 100vw;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #EC2D15;
+
+    .head_top {
+        width: 100%;
+        background: linear-gradient(360deg, rgba(232, 115, 0, 1) 0%, rgba(255, 199, 130, 1) 100%);
+
+        .topbar {
+            width: 100vw;
+            height: 90px;
+            text-align: center;
+            line-height: 90px;
+            position: relative;
+
+            .left {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 84px;
+                height: 90px;
+
+                span {
+                    display: inline-block;
+                    width: 24px;
+                    height: 40px;
+                    margin-top: 24px;
+                    background: url("../img/back_btn.png") no-repeat;
+                    background-size: 24px 40px;
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: 0;
+                right: 30px;
+                width: 300px;
+                height: 90px;
+                font-size: 32px;
+                text-align: right;
+            }
+
+            .title {
+                width: 100%;
+                height: 100%;
+                font-size: 36px;
+                font-weight: 600;
+            }
+        }
+
+        .top_bg {
+            width: 100vw;
+            height: 430px;
+            background: url('../img/earnings/top_bg.png') no-repeat;
+            background-size: 100% 100%;
+            margin-top: 10px;
+        }
+
+        .go_rank {
+            width: 238px;
+            height: 70px;
+            background: url('../img/earnings/go_rank.png') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 90px;
+            right: 0;
+
+        }
+
+    }
+
+    .account_box {
+        width: 100vw;
+        height: 226px;
+        background: url('../img/earnings/word_ban.png') no-repeat;
+        background-size: 100% 100%;
+        margin-top: -220px;
+
+        .account_main {
+            width: 690px;
+            height: 210px;
+            margin: 0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+
+            .msg {
+                font-size: 32px;
+                color: #000;
+                line-height: 40px;
+                padding-top: 6px;
+            }
+
+            .num {
+                font-size: 46px;
+                color: #F4033C;
+                line-height: 56px;
+                padding: 10px 0;
+                overflow: auto;
+
+            }
+
+            .rpc {
+                font-size: 24px;
+                color: #999;
+                overflow: auto;
+
+            }
+        }
+    }
+
+    .earnings_list {
+        flex: 1;
+        padding: 1px 30px;
+        overflow: auto;
+
+        .earnings_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+            background: linear-gradient(180deg, rgba(255, 230, 73, 1) 0%, rgba(255, 112, 85, 1) 100%);
+            border-radius: 70px;
+            border: 4px solid #FFEF6F;
+            margin: 30px 0;
+            box-sizing: border-box;
+
+            .icon_box {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .type {
+                font-size: 26px;
+                color: #212121;
+                padding: 20px;
+                font-weight: bold;
+            }
+
+            .coin_box {
+                flex: 1;
+                color: #B8473B;
+                text-align: right;
+                font-size: 36px;
+                line-height: 46px;
+                font-weight: bold;
+                padding-right: 50px;
+                word-break: break-all;
+
+                &.arraw {
+                    position: relative;
+
+                    &::after {
+                        position: absolute;
+                        content: " ";
+                        top: 50%;
+                        right: 25px;
+                        transform: translateY(-50%);
+                        width: 18px;
+                        height: 30px;
+                        background: url(../img/earnings/arrow_left.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+
+        .end {
+            color: #FF8D68;
+            font-size: 22px;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    }
+}
+
+.EarningsRanking {
+    width: 100vw;
+    height: 100%;
+    min-height: 700px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .head_top {
+        width: 100%;
+        height: 360px;
+        background: url('../img/earnings/rank_top_bg.png') no-repeat;
+        background-size: 100% 100%;
+
+        .topbar {
+            width: 100vw;
+            height: 90px;
+            text-align: center;
+            line-height: 90px;
+            position: relative;
+
+            .left {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 84px;
+                height: 90px;
+
+                span {
+                    display: inline-block;
+                    width: 24px;
+                    height: 40px;
+                    margin-top: 24px;
+                    background: url("../img/back_btn.png") no-repeat;
+                    background-size: 24px 40px;
+                }
+            }
+
+            .right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 90px;
+                height: 90px;
+                font-size: 32px;
+                text-align: right;
+                background: url('../img/earnings/share_icon.png') no-repeat;
+                background-size: 32px 33px;
+                background-position: center center;
+            }
+
+            .title {
+                width: 100%;
+                height: 100%;
+                font-size: 36px;
+                font-weight: 600;
+            }
+        }
+
+        .word_top {
+            width: 480px;
+            height: 80px;
+            background: url('../img/earnings/word_msg.png') no-repeat;
+            background-size: 100% 100%;
+            margin: 20px 30px;
+        }
+
+        .date {
+            width: 220px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 240, 176, 1);
+            color: #FFF0B0;
+            text-align: center;
+            font-size: 30px;
+            margin: 0 30px;
+        }
+
+    }
+
+    .rank_top {
+        width: 100vw;
+        margin-top: -30px;
+        border-radius: 20px 20px 0 0;
+        overflow: hidden;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #666666;
+        font-size: 24px;
+        line-height: 100px;
+        height: 100px;
+        border-bottom: 1px solid #EEEEEE;
+        padding: 0 30px;
+        box-sizing: border-box;
+
+        .rank {
+            width: 150px;
+        }
+
+        .name_box {
+            width: 200px;
+        }
+
+        .kou_num {
+            flex: 1;
+            text-align: right;
+        }
+    }
+
+    .main_box {
+        flex: 1;
+        -webkit-overflow-scrolling: touch;
+        padding: 1px 30px;
+        box-sizing: border-box;
+        overflow: hidden;
+        background: #fff;
+
+        .rank_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666666;
+            font-size: 24px;
+            line-height: 100px;
+            height: 100px;
+            border-bottom: 1px solid #EEEEEE;
+
+            &.arrow {
+                position: relative;
+                padding-right: 20px;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+
+                    width: 12px;
+                    height: 20px;
+                    background: url('../img/arrow_icon.png') no-repeat;
+                    background-size: 100% 100%;
+
+                }
+            }
+
+            .rank {
+                width: 130px;
+                display: flex;
+                align-items: center;
+
+                .rank {
+                    width: 64px;
+                    height: 48px;
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                    font-size: 26px;
+                    color: #666;
+                    text-align: center;
+                    display: inline-block;
+                    line-height: 48px;
+
+                    &.rank1 {
+                        background-image: url('../img/earnings/crown_1.png')
+                    }
+
+                    &.rank2 {
+                        background-image: url('../img/earnings/crown_2.png')
+                    }
+
+                    &.rank3 {
+                        background-image: url('../img/earnings/crown_3.png')
+                    }
+                }
+
+            }
+
+            .name_box {
+                width: 200px;
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+
+                }
+
+                .name {
+                    color: #212121;
+                    font-size: 26px;
+                    flex: 1;
+                    .ellipsis;
+                    padding-left: 6px;
+                    line-height: 40px;
+                }
+            }
+
+            .kou_num {
+                flex: 1;
+                text-align: right;
+                font-size: 28px;
+                color: #212121;
+                .ellipsis;
+            }
+        }
+
+        .no_list {
+            color: #999;
+            padding-bottom: 30px;
+            font-size: 28px;
+            line-height: 50px;
+            text-align: center;
+            padding-top: 150px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+    }
+
+    .botton {
+        width: 100vw;
+        height: 150px;
+        padding: 13px 30px;
+        box-sizing: border-box;
+
+        .current_persion {
+            width: 100%;
+            height: 120px;
+            background: url('../img/earnings/mine_bg.png') no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .rank {
+                width: 120px;
+                height: 120px;
+                background: url('../img/earnings/rank_bg.png') no-repeat;
+                background-size: 100% 100%;
+                text-align: center;
+                line-height: 120px;
+                font-size: 46px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: rgba(255, 227, 187, 1);
+                text-shadow: 0px 4px 3px rgba(160, 0, 0, 0.5);
+            }
+
+            .user_main {
+                flex: 1;
+                padding: 0 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .user_info {
+                    display: flex;
+                    align-items: center;
+
+                    .user_img {
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 50%;
+                        border: 4px solid rgba(255, 255, 255, 1);
+                    }
+
+                    .name {
+                        font-size: 26px;
+                        color: #fff;
+                        padding: 0 10px;
+                    }
+
+                }
+
+                .num {
+                    font-size: 28px;
+                    color: #fff;
+                }
+            }
+
+        }
+
+        .no_login {
+            margin-top: 20px;
+            width: 100%;
+            height: 90px;
+            line-height: 90px;
+            background: linear-gradient(85deg, rgba(247, 23, 80, 1) 0%, rgba(248, 23, 80, 1) 100%);
+            box-shadow: 0px 6px 16px 0px rgba(175, 0, 0, 0.25);
+            border-radius: 20px;
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+        }
+    }
+
+    .choose_box {
+        background: #fff;
+
+        .list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .item {
+                flex: 1;
+                text-align: center;
+                padding: 30px;
+                color: #212121;
+                font-size: 30px;
+                line-height: 40px;
+                position: relative;
+
+                img {
+                    width: 70px;
+                    height: 70px;
+                }
+
+                .show_award {
+                    position: absolute;
+                    top: 6px;
+                    left: 50%;
+                    width: 170px;
+                    height: 40px;
+                    background: url('../img/invite_corner.png') no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+
+        .cancle {
+            line-height: 98px;
+            height: 98px;
+            text-align: center;
+            font-size: 30px;
+            color: #212121;
+            border-top: 2px solid rgba(0, 0, 0, 0.3);
+        }
+    }
+}

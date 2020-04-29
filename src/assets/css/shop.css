@@ -1,0 +1,466 @@
+.van-pull-refresh {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.Shop {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  box-sizing: border-box;
+  background: #F4F4F4;
+  overflow: hidden;
+}
+.Shop .van-pull-refresh {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.Shop .TopHeader {
+  color: #222;
+  position: fixed;
+  width: 100vw;
+  height: 90px;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 90px;
+  font-size: 32px;
+  background: #fff;
+  z-index: 10;
+}
+.Shop .TopHeader .golist {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 24px;
+  color: #212121;
+  height: 90px;
+  line-height: 90px;
+}
+.Shop .list_box {
+  padding: 10px 30px;
+}
+.Shop .list_box .showItem {
+  background: #fff;
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 20px;
+}
+.Shop .list_box .showItem img {
+  width: 100%;
+  height: 330px;
+}
+.Shop .list_box .showItem .tt {
+  font-size: 30px;
+  line-height: 40px;
+  color: #212121;
+  padding: 10px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.Shop .list_box .showItem .tt span {
+  padding: 0 10px;
+}
+.Shop .list_box .showItem .td {
+  font-size: 24px;
+  color: #999;
+  display: flex;
+  padding: 5px 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-content: center;
+  line-height: 50px;
+}
+.Shop .list_box .showItem .td .btn {
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #FF0044;
+  border-radius: 10px;
+  border: 1px solid #ff003a;
+}
+.Shop .list_box .showItem .td .btn.disable {
+  background: #C5C5C5;
+  border: none;
+  color: #fff;
+  line-height: 52px;
+}
+.Shop .nolist {
+  text-align: center;
+  padding-top: 150px;
+}
+.Shop .nolist img {
+  width: 232px;
+}
+.Shop .nolist .cont {
+  font-size: 28px;
+  color: #999;
+  padding-top: 10px;
+}
+.ShopList {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  box-sizing: border-box;
+  background: #F4F4F4;
+}
+.ShopList .van-pull-refresh {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ShopList .list_box {
+  padding: 30px;
+}
+.ShopList .list_box .item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.ShopList .list_box .item .li {
+  padding: 5px 0;
+  line-height: 40px;
+}
+.ShopList .list_box .item .li .th {
+  font-size: 30px;
+  color: #333;
+}
+.ShopList .list_box .item .li .tt {
+  font-size: 26px;
+  color: #999999;
+}
+.ShopList .list_box .item .li .td {
+  font-size: 26px;
+  color: #666;
+}
+.ShopList .list_box .item .li .ttime {
+  float: right;
+  color: #999;
+  font-size: 26px;
+}
+.ShopList .list_box .item .line {
+  margin: 5px 0;
+  border-bottom: 1px solid #DDDDDD;
+}
+.ShopList .nolist {
+  text-align: center;
+  padding-top: 150px;
+}
+.ShopList .nolist img {
+  width: 232px;
+}
+.ShopList .nolist .cont {
+  font-size: 28px;
+  color: #999;
+  padding-top: 10px;
+}
+.ShopAddress {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 90px;
+  box-sizing: border-box;
+  background: #F9F9F9;
+}
+.ShopAddress .from {
+  background: #fff;
+  padding: 1px 30px;
+  margin-top: 10px;
+}
+.ShopAddress .from .item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ECECEC;
+}
+.ShopAddress .from .item .tt {
+  font-size: 30px;
+  color: #666;
+  line-height: 50px;
+}
+.ShopAddress .from .item .td input {
+  border: none;
+  line-height: 50px;
+  font-size: 30px;
+  color: #212121;
+  width: 100%;
+}
+.ShopAddress .from .item .td input::-webkit-input-placeholder {
+  color: #C5C5C5;
+  font-size: 30px;
+}
+.ShopAddress .from .item .td textarea {
+  background: #ffffff;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  resize: none;
+  font-size: 30px;
+  color: #333;
+  line-height: 50px;
+  height: 50px;
+  word-break: break-all;
+}
+.ShopAddress .from .item .td textarea::-webkit-input-placeholder {
+  color: #C5C5C5;
+  font-size: 30px;
+}
+.ShopAddress .from .item.stp {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  border-bottom: none;
+}
+.ShopAddress .from .item.stp .tt {
+  padding-right: 30px;
+}
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus {
+  background: #fff;
+  color: #676767;
+  border-radius: 8px;
+  border: 1px solid rgba(151, 151, 151, 0.8);
+}
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__minus--disabled,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__minus--disabled,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__plus--disabled,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__plus--disabled {
+  border: 1px solid rgba(151, 151, 151, 0.3);
+}
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__minus--disabled::before,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__minus--disabled::before,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__plus--disabled::before,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__plus--disabled::before,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__minus--disabled::after,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__minus--disabled::after,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__minus.van-stepper__plus--disabled::after,
+.ShopAddress .from .item.stp .van-stepper .van-stepper__plus.van-stepper__plus--disabled::after {
+  background-color: #D3D3D3;
+}
+.ShopAddress .from .item.stp .van-stepper .van-stepper__input {
+  background: #fff;
+}
+.ShopAddress .submit_btn {
+  margin: 50px 30px;
+  height: 90px;
+  line-height: 90px;
+  color: #fff;
+  background: #c5c5c5;
+  border-radius: 20px;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 150px;
+}
+.ShopAddress .submit_btn.active {
+  background: #f71750;
+  box-shadow: 0px 6px 16px 0px rgba(175, 0, 0, 0.25);
+}
+.PhoneBill {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.PhoneBill .head_box {
+  width: 100%;
+  height: 350px;
+  background: linear-gradient(left, #ff0065, #ff7900);
+  color: #fff;
+}
+.PhoneBill .head_box .topbar {
+  width: 100vw;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  font-size: 36px;
+}
+.PhoneBill .head_box .topbar .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 84px;
+  height: 90px;
+}
+.PhoneBill .head_box .topbar .left span {
+  display: inline-block;
+  width: 24px;
+  height: 40px;
+  margin-top: 25px;
+  background: url('../img/back_btn_b.png') no-repeat;
+  background-size: 24px 40px;
+}
+.PhoneBill .head_box .topbar .right {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  font-size: 24px;
+}
+.PhoneBill .head_box .topbar .title {
+  width: 100%;
+  height: 100%;
+}
+.PhoneBill .head_box .yesterday {
+  width: 100%;
+  overflow: hidden;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+.PhoneBill .head_box .cont_box {
+  width: 100%;
+  overflow: hidden;
+  font-size: 26px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  position: relative;
+  padding-left: 90px;
+}
+.PhoneBill .head_box .cont_box .phone_icon {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 30px;
+  height: 44px;
+  background: url('../img/phone_w.png') no-repeat;
+  background-size: 100% 100%;
+}
+.PhoneBill .head_box .cont_box .input_box {
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
+}
+.PhoneBill .head_box .cont_box .input_box input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 50px;
+  line-height: 50px;
+}
+.PhoneBill .head_box .cont_box .input_box input::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 30px;
+  line-height: 50px;
+}
+.PhoneBill .head_box .cont_box .c_n {
+  font-size: 24px;
+  line-height: 40px;
+  color: #fff;
+  padding-top: 8px;
+}
+.PhoneBill .account_title {
+  margin-top: -35px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 30px 30px 0 0;
+  overflow: hidden;
+  background: #fff;
+  z-index: 2;
+  padding-left: 30px;
+  color: #212121;
+  font-size: 32px;
+  font-weight: 600;
+}
+.PhoneBill .account_main_box {
+  flex: 1;
+  margin: 0;
+  overflow: auto;
+}
+.PhoneBill .account_main_box .money_box {
+  width: 100vw;
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.PhoneBill .account_main_box .money_box .money_item {
+  width: 320px;
+  height: 120px;
+  text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  font-size: 24px;
+  line-height: 44px;
+  color: #CACACA;
+}
+.PhoneBill .account_main_box .money_box .money_item .tt {
+  color: #999999;
+  font-size: 32px;
+  font-weight: 600;
+}
+.PhoneBill .account_main_box .money_box .money_item.active {
+  border: 2px solid #e93f3f;
+}
+.PhoneBill .account_main_box .money_box .money_item.active .tt {
+  color: #212121;
+}
+.PhoneBill .bill_mask {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.PhoneBill .bill_mask .bill_box {
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px;
+  width: 600px;
+}
+.PhoneBill .bill_mask .bill_box .bill_title {
+  color: #212121;
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: 600;
+  padding-top: 10px;
+}
+.PhoneBill .bill_mask .bill_box .bill_sub {
+  font-size: 30px;
+  color: #212121;
+  line-height: 46px;
+}
+.PhoneBill .bill_mask .bill_box .phone {
+  font-size: 26px;
+  color: #999;
+  line-height: 40px;
+  padding: 40px 0;
+}
+.PhoneBill .bill_mask .bill_box .sure_btn {
+  height: 90px;
+  font-size: 32px;
+  color: #fff;
+  line-height: 90px;
+  background: #F71750;
+  border-radius: 20px;
+}
+.PhoneBill .bill_mask .close_btn {
+  margin-top: 30px;
+  width: 60px;
+  height: 60px;
+  background: url('../img/close_b.png') no-repeat;
+  background-size: 100% 100%;
+}
