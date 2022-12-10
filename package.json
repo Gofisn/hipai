@@ -32,7 +32,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
-    "qs": "^6.7.0",
+    "qs": "^6.9.7",
     "vconsole": "^3.3.4",
     "vue-template-compiler": "^2.6.10"
   }
